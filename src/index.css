@@ -1,0 +1,208 @@
+/* ════════════════ DESIGN TOKENS ════════════════ */
+:root {
+  --bg: #f5f2ec;
+  --bg2: #ede9e0;
+  --surface: #ffffff;
+  --text: #1a1814;
+  --text2: #5c5849;
+  --text3: #9c9485;
+  --accent: #1a1814;
+  --accent2: #3d3a34;
+  --accent-light: #e0ddd6;
+  --border: rgba(26, 24, 20, 0.12);
+  --border2: rgba(26, 24, 20, 0.25);
+  --tag-bg: rgba(26, 24, 20, 0.07);
+  --tag-text: #3d3a34;
+  --nav-bg: rgba(245, 242, 236, 0.88);
+  --card-shadow: 0 4px 28px rgba(26, 24, 20, 0.1);
+}
+[data-theme="dark"] {
+  --bg: #0f0e0c;
+  --bg2: #161511;
+  --surface: #1e1c18;
+  --text: #ede9e0;
+  --text2: #a8a393;
+  --text3: #6b6659;
+  --accent: #ede9e0;
+  --accent2: #c8c4b8;
+  --accent-light: #1e1c18;
+  --border: rgba(237, 233, 224, 0.1);
+  --border2: rgba(237, 233, 224, 0.22);
+  --tag-bg: rgba(237, 233, 224, 0.07);
+  --tag-text: #c8c4b8;
+  --nav-bg: rgba(15, 14, 12, 0.9);
+  --card-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* ════════════════ RESET & BASE ════════════════ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  font-family: "Syne", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  transition:
+    background 0.45s ease,
+    color 0.45s ease;
+}
+
+/* ════════════════ SHARED SECTION STYLES ════════════════ */
+section {
+  padding: 6rem 2rem;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--text2);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--text2);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+.section-title .it {
+  font-style: italic;
+  color: var(--text2);
+}
+
+/* ════════════════ BUTTONS ════════════════ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.05em;
+}
+.btn-primary:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border2);
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.05em;
+}
+.btn-outline:hover {
+  border-color: var(--text);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* ════════════════ TAGS ════════════════ */
+.tag {
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  color: var(--tag-text);
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ════════════════ ANIMATIONS ════════════════ */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* ════════════════ RESPONSIVE ════════════════ */
+@media (max-width: 600px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+}

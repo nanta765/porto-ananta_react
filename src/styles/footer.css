@@ -1,0 +1,27 @@
+/* ════════════════ FOOTER ════════════════ */
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer p {
+  font-size: 13px;
+  color: var(--text3);
+  font-family: "DM Mono", monospace;
+}
+footer p span {
+  color: var(--text2);
+}
+
+/* ════════════════ RESPONSIVE ════════════════ */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
