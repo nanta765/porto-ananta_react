@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { personalInfo, skillCategories } from '../data/portfolio'
 import ImageWithFallback from './ImageWithFallback'
+import { LeafSprig, CornerFlourish } from './decor'
 import '../styles/about.css'
 
 function About() {
@@ -13,6 +14,9 @@ function About() {
       <div className="container">
         <div className="about-grid">
           <div className="about-image-wrap reveal">
+            <div className="decor decor-flourish about-flourish">
+              <CornerFlourish />
+            </div>
             <div className="about-image-frame">
               <ImageWithFallback
                 src={personalInfo.profileImage}
@@ -31,10 +35,12 @@ function About() {
 
           {/* Text side */}
           <div className="about-text">
-            <div className="section-label reveal">Tentang Saya</div>
+            <div className="decor decor-sprig about-sprig">
+              <LeafSprig />
+            </div>
+            <div className="section-label reveal">A Little About Me</div>
             <h2 className="section-title reveal reveal-delay-1">
-              Sistem yang andal<br />dimulai dari{' '}
-              <span className="it">backend.</span>
+              A Little <span className="it">About Me.</span>
             </h2>
             <div className="reveal reveal-delay-2">
               {personalInfo.aboutBio.map((paragraph, index) => (
@@ -45,6 +51,7 @@ function About() {
               ))}
             </div>
             <div className="reveal reveal-delay-3">
+              <div className="skills-subhead">The Tools Behind the Work</div>
               {skillCategories.map((group) => (
                 <div key={group.category} className="skill-category">
                   <div className="skill-category-label">{group.category}</div>

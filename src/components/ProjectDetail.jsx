@@ -1,16 +1,23 @@
-import ImageWithFallback from './ImageWithFallback'
+import ProjectGallery from './ProjectGallery'
 
 /**
  * Content rendered inside the shared Modal for a selected project.
  */
 function ProjectDetail({ project }) {
+  // Prefer the multi-image gallery; fall back to the single `image` field.
+  const galleryImages =
+    project.images && project.images.length > 0
+      ? project.images
+      : project.image
+        ? [project.image]
+        : []
+
   return (
     <div className="project-detail">
       <div className="project-detail-hero">
-        <ImageWithFallback
-          src={project.image}
+        <ProjectGallery
+          images={galleryImages}
           alt={project.title}
-          className="project-detail-image"
           fallback={
             <div
               className="project-detail-thumb-inner"

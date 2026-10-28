@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { volunteer } from '../data/portfolio'
+import { LeafSprig } from './decor'
 import '../styles/volunteer.css'
 
 function Volunteer() {
@@ -10,10 +11,15 @@ function Volunteer() {
   return (
     <section id="volunteer" ref={sectionRef}>
       <div className="container">
-        <div className="section-label reveal">Kerelawanan</div>
-        <h2 className="section-title reveal reveal-delay-1">
-          Berbagi dampak<br />yang <span className="it">bermakna.</span>
-        </h2>
+        <div className="volunteer-head">
+          <div className="decor decor-sprig volunteer-sprig">
+            <LeafSprig />
+          </div>
+          <div className="section-label reveal">Beyond the Screen</div>
+          <h2 className="section-title reveal reveal-delay-1">
+            Beyond the <span className="it">Screen.</span>
+          </h2>
+        </div>
 
         <div className="volunteer-card reveal reveal-delay-2">
           <div className="volunteer-role">{volunteer.role}</div>

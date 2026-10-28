@@ -20,9 +20,9 @@ function Achievements() {
   return (
     <section id="achievements" ref={sectionRef}>
       <div className="container">
-        <div className="section-label reveal">Pencapaian</div>
+        <div className="section-label reveal">Certificates &amp; Awards</div>
         <h2 className="section-title reveal reveal-delay-1">
-          Prestasi yang<br /><span className="it">membanggakan.</span>
+          Recognition &amp; <span className="it">Growth.</span>
         </h2>
         <div className="achievements-grid">
           {achievements.map((achievement, index) => {

@@ -11,13 +11,35 @@
 .about-image-wrap {
   position: relative;
 }
+.about-flourish {
+  top: -2.5rem;
+  left: -2.5rem;
+  width: 120px;
+  height: 120px;
+  z-index: 0;
+}
+.about-text {
+  position: relative;
+}
+.about-sprig {
+  top: -1.5rem;
+  right: -0.5rem;
+  width: 90px;
+  height: 90px;
+}
 .about-image-frame {
   width: 100%;
   aspect-ratio: 3/4;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  background: var(--bg);
+  z-index: 1;
+  /* Fine-art mat: a cream mat inside a thin beige frame. */
+  background: var(--surface);
+  border: 1px solid var(--beige);
+  box-shadow:
+    inset 0 0 0 6px var(--surface),
+    inset 0 0 0 7px var(--border);
 }
 .about-image-frame::before {
   content: "";
@@ -27,6 +49,10 @@
   border-radius: 6px;
   z-index: 1;
   pointer-events: none;
+}
+.about-text > *:not(.about-sprig) {
+  position: relative;
+  z-index: 1;
 }
 .about-placeholder {
   width: 100%;
@@ -43,7 +69,7 @@
   opacity: 0.2;
 }
 .about-placeholder-label {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--text3);
@@ -55,7 +81,7 @@
   right: -1rem;
   background: var(--text);
   color: var(--bg);
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.1em;
   padding: 8px 14px;
@@ -72,11 +98,19 @@
   color: var(--text);
   font-weight: 600;
 }
+.skills-subhead {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
 .skill-category {
   margin-top: 2rem;
 }
 .skill-category-label {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -94,11 +128,11 @@
   gap: 10px;
   font-size: 13px;
   color: var(--text2);
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
 }
 .skill-item::before {
   content: "▸";
-  color: var(--text3);
+  color: var(--olive);
   font-size: 10px;
 }
 

@@ -1,19 +1,19 @@
 /* ════════════════ STATS ════════════════ */
+/* Deliberate deep-forest feature band (the one dark band in light mode). */
 #stats {
-  background: var(--text);
+  background: var(--forest);
   padding: 4rem 2rem;
 }
-#stats .section-label {
-  color: rgba(255, 255, 255, 0.35);
+/* In dark mode --forest flips to pale sage, so use a dark forest band instead. */
+[data-theme="dark"] #stats {
+  background: var(--bg2);
 }
-[data-theme="light"] #stats .section-label {
-  color: rgba(245, 242, 236, 0.45);
+/* Muted cream label on the band, both themes. */
+#stats .section-label {
+  color: rgba(242, 235, 221, 0.6);
 }
 #stats .section-label::before {
-  background: rgba(255, 255, 255, 0.25);
-}
-[data-theme="light"] #stats .section-label::before {
-  background: rgba(245, 242, 236, 0.35);
+  background: rgba(242, 235, 221, 0.4);
 }
 .stats-grid {
   display: grid;
@@ -25,29 +25,20 @@
   text-align: center;
 }
 .stat-number {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   margin-bottom: 0.5rem;
-}
-[data-theme="dark"] .stat-number {
-  color: #0f0e0c;
-}
-[data-theme="light"] .stat-number {
-  color: #f5f2ec;
+  /* Cream numerals in BOTH themes — stays light on the forest/dark band. */
+  color: var(--on-forest);
 }
 .stat-label {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-[data-theme="dark"] .stat-label {
-  color: rgba(15, 14, 12, 0.5);
-}
-[data-theme="light"] .stat-label {
-  color: rgba(245, 242, 236, 0.55);
+  color: rgba(242, 235, 221, 0.6);
 }
 
 /* ════════════════ RESPONSIVE ════════════════ */

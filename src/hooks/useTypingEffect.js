@@ -12,9 +12,16 @@ export function useTypingEffect(phrases, options = {}) {
     deleteSpeed = 38,
     pauseDuration = 2200,
     startDelay = 1200,
+    disabled,
   } = options
 
-  const [text, setText] = useState('')
+  const prefersReduced =
+    typeof window !== 'undefined' &&
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+  const [text, setText] = useState(() =>
+    disabled || prefersReduced ? (phrases[0] ?? '') : ''
+  )
   const phraseIdx = useRef(0)
   const charIdx = useRef(0)
   const isDeleting = useRef(false)
@@ -45,6 +52,7 @@ export function useTypingEffect(phrases, options = {}) {
   }, [phrases, typeSpeed, deleteSpeed, pauseDuration])
 
   useEffect(() => {
+    if (disabled || prefersReduced) return // static first phrase, no interval
     if (hasStarted.current) return
     hasStarted.current = true
 
@@ -58,7 +66,7 @@ export function useTypingEffect(phrases, options = {}) {
     timeoutId = setTimeout(run, startDelay)
 
     return () => clearTimeout(timeoutId)
-  }, [typeLoop, startDelay])
+  }, [typeLoop, startDelay, disabled, prefersReduced])
 
   return text
 }

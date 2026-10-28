@@ -1,37 +1,89 @@
+/* ──────────────────────────────────────────────────────────────
+   OPTIONAL display font: "Violet Sans"
+   The active elegant display font is Fraunces (loaded via Google Fonts
+   in index.html). To use your own "Violet Sans" instead:
+     1. Drop the font file at:  public/fonts/VioletSans.woff2
+     2. Uncomment the @font-face block below.
+     3. In :root, change:  --font-display: "Violet Sans", "Fraunces", serif;
+   Leaving this commented keeps Fraunces as the display font.
+
+   @font-face {
+     font-family: "Violet Sans";
+     src: url("/fonts/VioletSans.woff2") format("woff2");
+     font-weight: 400 700;
+     font-style: normal;
+     font-display: swap;
+   }
+   ──────────────────────────────────────────────────────────── */
+
 /* ════════════════ DESIGN TOKENS ════════════════ */
 :root {
-  --bg: #f5f2ec;
-  --bg2: #ede9e0;
+  /* Core semantic tokens — warm ivory/cream "fine-art gallery" light palette.
+     Names are unchanged from the original so every component recolors here. */
+  --bg: #faf7f0;
+  --bg2: #f2ebdd;
   --surface: #ffffff;
-  --text: #1a1814;
-  --text2: #5c5849;
-  --text3: #9c9485;
-  --accent: #1a1814;
-  --accent2: #3d3a34;
-  --accent-light: #e0ddd6;
-  --border: rgba(26, 24, 20, 0.12);
-  --border2: rgba(26, 24, 20, 0.25);
-  --tag-bg: rgba(26, 24, 20, 0.07);
-  --tag-text: #3d3a34;
-  --nav-bg: rgba(245, 242, 236, 0.88);
-  --card-shadow: 0 4px 28px rgba(26, 24, 20, 0.1);
+  --text: #35483a;
+  --text2: #817b72;
+  --text3: #a79e8e;
+  --accent: #35483a;
+  --accent2: #2a3a2e;
+  --accent-light: #e8ddca;
+  --border: rgba(53, 72, 58, 0.14);
+  --border2: rgba(53, 72, 58, 0.28);
+  --tag-bg: rgba(119, 123, 85, 0.12);
+  --tag-text: #35483a;
+  --nav-bg: rgba(250, 247, 240, 0.82);
+  --card-shadow: 0 6px 30px rgba(53, 72, 58, 0.1);
+
+  /* Named nature-palette tokens (referenced by SVG decor + accents). */
+  --ivory: #faf7f0;
+  --cream: #f2ebdd;
+  --beige: #e8ddca;
+  --sage: #a3ad91;
+  --forest: #35483a;
+  --olive: #777b55;
+  --terracotta: #b97861;
+  --ochre: #c6a66b;
+  --warm-gray: #817b72;
+  /* Cream ink that stays light in BOTH themes — for text on the forest band. */
+  --on-forest: #f2ebdd;
+
+  /* Typography tokens. --font-display is the elegant display serif (Fraunces). */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 [data-theme="dark"] {
-  --bg: #0f0e0c;
-  --bg2: #161511;
-  --surface: #1e1c18;
-  --text: #ede9e0;
-  --text2: #a8a393;
-  --text3: #6b6659;
-  --accent: #ede9e0;
-  --accent2: #c8c4b8;
-  --accent-light: #1e1c18;
-  --border: rgba(237, 233, 224, 0.1);
-  --border2: rgba(237, 233, 224, 0.22);
-  --tag-bg: rgba(237, 233, 224, 0.07);
-  --tag-text: #c8c4b8;
-  --nav-bg: rgba(15, 14, 12, 0.9);
-  --card-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+  /* Deep-forest / charcoal dark variant — no pure black, stays readable. */
+  --bg: #161c17;
+  --bg2: #1c241d;
+  --surface: #222b22;
+  --text: #ece6d8;
+  --text2: #b6b0a2;
+  --text3: #8a8575;
+  --accent: #c9d3be;
+  --accent2: #aebba0;
+  --accent-light: #263024;
+  --border: rgba(236, 230, 216, 0.12);
+  --border2: rgba(236, 230, 216, 0.24);
+  --tag-bg: rgba(163, 173, 145, 0.14);
+  --tag-text: #c9d3be;
+  --nav-bg: rgba(22, 28, 23, 0.85);
+  --card-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
+
+  /* Named nature-palette tokens — dark theme. */
+  --ivory: #ede7da;
+  --cream: #20271f;
+  --beige: #28311f;
+  --sage: #8e9a7d;
+  --forest: #c9d3be;
+  --olive: #9ba074;
+  --terracotta: #cc8a72;
+  --ochre: #d4b77e;
+  --warm-gray: #a9a396;
+  /* Same light cream as light theme — it is the stats-band ink in both. */
+  --on-forest: #f2ebdd;
 }
 
 /* ════════════════ RESET & BASE ════════════════ */
@@ -47,7 +99,8 @@ html {
   font-size: 16px;
 }
 body {
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
@@ -65,7 +118,7 @@ section {
   margin: 0 auto;
 }
 .section-label {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.15em;
   color: var(--text2);
@@ -83,9 +136,12 @@ section {
   flex-shrink: 0;
 }
 .section-title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
   color: var(--text);
   margin-bottom: 1.5rem;
@@ -94,18 +150,25 @@ section {
   font-style: italic;
   color: var(--text2);
 }
+.section-subtitle {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--text2);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: -0.5rem 0 1.5rem;
+}
 
 /* ════════════════ BUTTONS ════════════════ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--text);
+  background: var(--accent);
   color: var(--bg);
   border: none;
   padding: 14px 28px;
   border-radius: 100px;
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -114,9 +177,9 @@ section {
   letter-spacing: 0.05em;
 }
 .btn-primary:hover {
-  opacity: 0.8;
+  background: var(--accent2);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--card-shadow);
 }
 .btn-outline {
   display: inline-flex;
@@ -127,7 +190,7 @@ section {
   border: 1px solid var(--border2);
   padding: 14px 28px;
   border-radius: 100px;
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -136,8 +199,8 @@ section {
   letter-spacing: 0.05em;
 }
 .btn-outline:hover {
-  border-color: var(--text);
-  color: var(--text);
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -146,13 +209,60 @@ section {
   background: var(--tag-bg);
   border: 1px solid var(--border);
   color: var(--tag-text);
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.06em;
   padding: 4px 10px;
   border-radius: 100px;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+/* ════════════════ BOTANICAL DECOR ════════════════ */
+/* Shared rules for the inline SVG botanical decorations. Every decor layer
+   sits behind readable content, is aria-hidden, and never intercepts input. */
+.decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.decor svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.decor-branch {
+  opacity: 0.2; /* hero branch ceiling ≤ 0.22 */
+}
+.decor-sprig {
+  opacity: 0.15; /* corner sprig ceiling ≤ 0.16 */
+}
+.decor-flourish {
+  opacity: 0.14;
+}
+.decor-divider {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 3.5rem auto 0;
+  opacity: 0.5; /* divider ceiling ≤ 0.5 */
+  color: var(--sage);
+}
+.decor-divider svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Low-opacity paper/canvas grain — CSS/SVG only, no image request. */
+.paper-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04; /* grain ceiling ≤ 0.05 */
+  mix-blend-mode: multiply;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* ════════════════ ANIMATIONS ════════════════ */
@@ -204,5 +314,21 @@ section {
 @media (max-width: 600px) {
   section {
     padding: 4rem 1.25rem;
+  }
+}
+
+/* ════════════════ REDUCED MOTION ════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

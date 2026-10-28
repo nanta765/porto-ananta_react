@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { education } from '../data/portfolio'
+import { Divider } from './decor'
 import '../styles/education.css'
 
 function Education() {
@@ -10,9 +11,9 @@ function Education() {
   return (
     <section id="education" ref={sectionRef}>
       <div className="container">
-        <div className="section-label reveal">Pendidikan</div>
+        <div className="section-label reveal">Learning &amp; Milestones</div>
         <h2 className="section-title reveal reveal-delay-1">
-          Fondasi akademik<br />yang <span className="it">kuat.</span>
+          Learning &amp; <span className="it">Milestones.</span>
         </h2>
 
         <div className="education-card reveal reveal-delay-2">
@@ -37,6 +38,7 @@ function Education() {
             </div>
           </div>
         </div>
+        <Divider className="decor-divider" />
       </div>
     </section>
   )

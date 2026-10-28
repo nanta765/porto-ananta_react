@@ -21,10 +21,13 @@ function Projects() {
   return (
     <section id="projects" ref={sectionRef}>
       <div className="container">
-        <div className="section-label reveal">Proyek Pilihan</div>
+        <div className="section-label reveal">Selected Works</div>
         <h2 className="section-title reveal reveal-delay-1">
-          Karya teknis<br />dengan <span className="it">presisi.</span>
+          Selected <span className="it">Works.</span>
         </h2>
+        <p className="section-subtitle reveal reveal-delay-1">
+          Digital experiences shaped by curiosity, logic, and creativity.
+        </p>
 
         <div className="projects-table">
           {projects.map((project, index) => (
@@ -52,6 +55,7 @@ function Projects() {
                 />
               </div>
               <div>
+                <span className="project-category">{project.category}</span>
                 <div className="project-title">{project.title}</div>
                 <div className="project-desc">{project.desc}</div>
               </div>

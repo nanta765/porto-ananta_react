@@ -5,6 +5,10 @@ import '../styles/stats.css'
 
 function animateCounter(el) {
   const target = parseInt(el.dataset.target)
+  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = target + (target === 100 ? '%' : '+')
+    return
+  }
   let current = 0
   const step = Math.ceil(target / 40)
   const interval = setInterval(() => {
@@ -44,7 +48,7 @@ function Stats() {
   return (
     <section id="stats" ref={sectionRef}>
       <div className="container">
-        <div className="section-label">Rekam Jejak</div>
+        <div className="section-label">By the Numbers</div>
         <div className="stats-grid">
           {stats.map((stat, index) => (
             <div

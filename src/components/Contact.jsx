@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { personalInfo, contactLinks } from '../data/portfolio'
+import { BranchDecor } from './decor'
 import '../styles/contact.css'
 
 function Contact() {
@@ -18,10 +19,14 @@ function Contact() {
       <div className="container">
         <div className="contact-grid">
           {/* Left: links */}
-          <div>
-            <div className="section-label reveal">Hubungi Saya</div>
+          <div className="contact-intro">
+            <div className="decor decor-branch contact-branch">
+              <BranchDecor />
+            </div>
+            <div className="section-label reveal">Get in Touch</div>
             <h2 className="section-title reveal reveal-delay-1">
-              Mari kita<br />berkolaborasi <span className="it">bersama.</span>
+              Let's Create Something{' '}
+              <span className="it">Meaningful.</span>
             </h2>
             <p
               className="reveal reveal-delay-2"
@@ -31,9 +36,8 @@ function Contact() {
                 marginBottom: '2rem',
               }}
             >
-              I'm open to internship opportunities and collaboration on
-              full-stack projects. Feel free to reach out — I'd love to connect
-              and build something together.
+              Have a project idea, an opportunity, or simply want to connect?
+              I'd be happy to hear from you.
             </p>
             <div className="contact-links">
               {contactLinks.map((link, index) => (
@@ -56,16 +60,14 @@ function Contact() {
 
           {/* Right: form */}
           <div className="contact-form-side reveal reveal-delay-2">
-            <p>
-              Kirim pesan langsung dan saya akan membalas dalam waktu 24 jam.
-            </p>
+            <p>Send a message and I'll reply within 24 hours.</p>
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="contact-name">Nama</label>
+                <label htmlFor="contact-name">Name</label>
                 <input
                   id="contact-name"
                   type="text"
-                  placeholder="Nama kamu"
+                  placeholder="Your name"
                 />
               </div>
               <div className="form-group">
@@ -78,18 +80,18 @@ function Contact() {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="contact-subject">Subjek</label>
+              <label htmlFor="contact-subject">Subject</label>
               <input
                 id="contact-subject"
                 type="text"
-                placeholder="Ini tentang apa?"
+                placeholder="What's this about?"
               />
             </div>
             <div className="form-group">
-              <label htmlFor="contact-message">Pesan</label>
+              <label htmlFor="contact-message">Message</label>
               <textarea
                 id="contact-message"
-                placeholder="Ceritakan tentang proyek atau kebutuhanmu..."
+                placeholder="Tell me about your project or idea…"
               ></textarea>
             </div>
             <button
@@ -98,7 +100,7 @@ function Contact() {
               style={{ width: '100%', justifyContent: 'center' }}
               disabled={sent}
             >
-              {sent ? '✓ Pesan Terkirim!' : 'Kirim Pesan ↗'}
+              {sent ? '✓ Message Sent!' : 'Send Message ↗'}
             </button>
           </div>
         </div>

@@ -8,6 +8,19 @@
   gap: 5rem;
   align-items: start;
 }
+.contact-intro {
+  position: relative;
+}
+.contact-branch {
+  top: -2.5rem;
+  right: -1rem;
+  width: 120px;
+  height: 120px;
+}
+.contact-intro > *:not(.contact-branch) {
+  position: relative;
+  z-index: 1;
+}
 .contact-links {
   display: flex;
   flex-direction: column;
@@ -27,7 +40,7 @@
   transition: all 0.3s;
 }
 .contact-link:hover {
-  border-color: var(--text2);
+  border-color: var(--sage);
   transform: translateX(6px);
   box-shadow: var(--card-shadow);
 }
@@ -45,7 +58,7 @@
 .contact-link-label {
   font-size: 11px;
   color: var(--text3);
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   letter-spacing: 0.08em;
   margin-bottom: 3px;
 }
@@ -82,7 +95,7 @@
 .form-group label {
   display: block;
   font-size: 11px;
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   letter-spacing: 0.1em;
   color: var(--text3);
   text-transform: uppercase;
@@ -94,7 +107,7 @@
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text);
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
   padding: 12px 14px;
   border-radius: 6px;

@@ -12,12 +12,11 @@ export const personalInfo = {
   graduation: 2028,
   location: 'Indonesia',
   navLogo: 'IGBA',
-  profileImage: '/anantaaa.png',
+  profileImage: '/anantaaa.jpg',
   heroHeadline: 'Building Digital Solutions Through Full-Stack Development.',
-  heroSubtitle:
-    'Computer Science Student at BINUS University | Aspiring Full-Stack Developer',
+  heroSubtitle: 'Computer Science · BINUS University',
   heroSupporting:
-    'Exploring modern web technologies, backend engineering, database systems, and AI-powered applications to build useful and user-friendly digital experiences.',
+    'I am a Computer Science student specializing in Full-Stack Development, passionate about building modern web applications, backend systems, and thoughtful digital experiences.',
   aboutBio: [
     "I'm a <strong>Computer Science student at BINUS University Malang</strong> specializing in <strong>Full-Stack Development</strong>. I enjoy building responsive web applications, backend systems, database-driven solutions, and exploring AI integration to solve real problems.",
     'Through academic and team projects I have worked across the stack with <strong>React.js, JavaScript, Node.js, PHP, Laravel, Python, MariaDB, and PostgreSQL</strong> — connecting clean front-end experiences with reliable server-side logic and well-structured data.',
@@ -90,8 +89,12 @@ export const projects = [
     year: '2025',
     icon: '🏨',
     image: '/hotel.jpg',
+    // Galeri foto proyek — bisa di-slide ke samping di modal detail.
+    // Taruh file di folder public/ lalu daftarkan path-nya di sini.
+    // Gambar yang belum ada otomatis dilewati (graceful fallback).
+    images: ['/hotel.jpg', '/hotel-2.jpg', '/hotel-3.jpg'],
     gradient: 'linear-gradient(135deg, #e8e4da, #d5d0c6)',
-    github: 'https://github.com/nanta765',
+    github: 'https://github.com/nanta765/hotel_arca.git',
   },
   {
     title: 'Real-Time Gym Motion Correction AI',
@@ -113,26 +116,29 @@ export const projects = [
     ],
     icon: '🤖',
     image: '/ai1.jpeg',
+    images: ['/ai1.jpeg', '/ai-2.jpg', '/ai-3.jpg'],
     gradient: 'linear-gradient(135deg, #dde0e8, #c8ccda)',
     github: 'https://github.com/nanta765',
   },
   {
-    title: 'Arcadia Boarding House — Booking System',
+    title: 'Kost Arcadia Room — Sistem Pemesanan Kost',
     role: 'Front-End Engineer',
     category: 'Database-Driven Web Application',
     projectType: 'Academic / Team Project',
     tags: ['Laravel', 'PHP', 'CSS Frameworks', 'MariaDB', 'PostgreSQL'],
-    desc: 'A database-driven booking system for a boarding house that lets users browse available rooms and manage bookings, backed by a relational database and a Laravel/PHP application layer.',
+    desc: 'A database-driven boarding-house (kost) booking system where users can browse available rooms, check room details and pricing, and submit booking requests. Backed by a relational database and a Laravel/PHP application layer, it digitizes the manual kost booking and data-submission process.',
     keyContributions: [
-      'Developed front-end interfaces for browsing rooms and managing bookings.',
+      'Developed front-end interfaces for browsing kost rooms and submitting bookings.',
+      'Built dynamic views and forms for room details, pricing, and tenant data.',
       'Worked with Laravel and PHP to connect views with application logic.',
       'Collaborated on relational database design using MariaDB and PostgreSQL.',
       'Focused on a clear, responsive layout for the booking experience.',
     ],
     icon: '🏠',
     image: '/arcadia.jpg',
+    images: ['/arcadia.jpg', '/arcadia-2.jpg', '/arcadia-3.jpg'],
     gradient: 'linear-gradient(135deg, #e8e4da, #d5d0c6)',
-    github: 'https://github.com/nanta765',
+    github: 'https://github.com/nanta765/arcadia-kost.git',
   },
 ]
 
@@ -148,7 +154,7 @@ export const achievements = [
     icon: '📜',
     title: 'DSF 46 Faculty of IT: Back End',
     date: '15–19 December 2025',
-    image: '/backend.png',
+    image: '/dibimbing-backend.jpg',
   },
   {
     icon: '📜',
@@ -156,7 +162,7 @@ export const achievements = [
     issuer: 'BINUS University',
     date: 'August 2025',
     note: 'Certificate of Completion — Credit achievement.',
-    image: '/bncc.jpg',
+    image: '/backend.png',
   },
   {
     icon: '📜',

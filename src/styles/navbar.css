@@ -19,7 +19,7 @@ nav {
     border-color 0.4s;
 }
 .nav-logo {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   color: var(--text3);
   letter-spacing: 0.1em;
@@ -34,6 +34,7 @@ nav {
   gap: 2rem;
 }
 .nav-links a {
+  position: relative;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -42,9 +43,25 @@ nav {
   text-transform: uppercase;
   transition: color 0.3s;
 }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text);
+  color: var(--accent);
 }
 .theme-btn {
   background: var(--tag-bg);
