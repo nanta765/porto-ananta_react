@@ -94,7 +94,7 @@ export const projects = [
     // Gambar yang belum ada otomatis dilewati (graceful fallback).
     images: ['/hotel.jpg', '/hotel-2.jpg', '/hotel-3.jpg'],
     gradient: 'linear-gradient(135deg, #e8e4da, #d5d0c6)',
-    github: 'https://github.com/nanta765/hotel_arca.git',
+    github: 'https://github.com/nanta765',
   },
   {
     title: 'Real-Time Gym Motion Correction AI',
@@ -121,15 +121,14 @@ export const projects = [
     github: 'https://github.com/nanta765',
   },
   {
-    title: 'Kost Arcadia Room — Sistem Pemesanan Kost',
+    title: 'Arcadia Boarding House — Booking System',
     role: 'Front-End Engineer',
     category: 'Database-Driven Web Application',
     projectType: 'Academic / Team Project',
     tags: ['Laravel', 'PHP', 'CSS Frameworks', 'MariaDB', 'PostgreSQL'],
-    desc: 'A database-driven boarding-house (kost) booking system where users can browse available rooms, check room details and pricing, and submit booking requests. Backed by a relational database and a Laravel/PHP application layer, it digitizes the manual kost booking and data-submission process.',
+    desc: 'A database-driven booking system for a boarding house that lets users browse available rooms and manage bookings, backed by a relational database and a Laravel/PHP application layer.',
     keyContributions: [
-      'Developed front-end interfaces for browsing kost rooms and submitting bookings.',
-      'Built dynamic views and forms for room details, pricing, and tenant data.',
+      'Developed front-end interfaces for browsing rooms and managing bookings.',
       'Worked with Laravel and PHP to connect views with application logic.',
       'Collaborated on relational database design using MariaDB and PostgreSQL.',
       'Focused on a clear, responsive layout for the booking experience.',
@@ -138,7 +137,7 @@ export const projects = [
     image: '/arcadia.jpg',
     images: ['/arcadia.jpg', '/arcadia-2.jpg', '/arcadia-3.jpg'],
     gradient: 'linear-gradient(135deg, #e8e4da, #d5d0c6)',
-    github: 'https://github.com/nanta765/arcadia-kost.git',
+    github: 'https://github.com/nanta765',
   },
 ]
 
@@ -154,7 +153,7 @@ export const achievements = [
     icon: '📜',
     title: 'DSF 46 Faculty of IT: Back End',
     date: '15–19 December 2025',
-    image: '/dibimbing-backend.jpg',
+    image: '/backend.png',
   },
   {
     icon: '📜',
@@ -162,7 +161,7 @@ export const achievements = [
     issuer: 'BINUS University',
     date: 'August 2025',
     note: 'Certificate of Completion — Credit achievement.',
-    image: '/backend.png',
+    image: '/bncc.jpg',
   },
   {
     icon: '📜',
