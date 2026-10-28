@@ -11,21 +11,19 @@ function Hero() {
       <div className="hero-grid"></div>
       <div className="hero-content">
         <div className="hero-badge">Open to Opportunities</div>
-        <div className="hero-role">
-          {personalInfo.role} · {personalInfo.university}
-        </div>
+        <div className="hero-role">{personalInfo.heroSubtitle}</div>
         <h1 className="hero-title">
-          I Gusti Bagus<br />
-          <span className="name-italic">Ananta.</span>
+          Building Digital Solutions Through<br />
+          <span className="name-italic">Full-Stack Development.</span>
         </h1>
         <div className="hero-typing">
           <span id="typingText">{typedText}</span>
           <span className="cursor"></span>
         </div>
-        <p className="hero-desc">{personalInfo.heroDesc}</p>
+        <p className="hero-desc">{personalInfo.heroSupporting}</p>
         <div className="hero-ctas">
-          <a href="#projects" className="btn-primary">Lihat Proyek ↓</a>
-          <a href="#contact" className="btn-outline">Hubungi Saya →</a>
+          <a href="#projects" className="btn-primary">View My Projects ↓</a>
+          <a href="#contact" className="btn-outline">Contact Me →</a>
         </div>
       </div>
       <div className="hero-scroll">

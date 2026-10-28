@@ -72,11 +72,6 @@ export const skillCategories = [
   },
 ]
 
-// Backwards-compatible flat list consumed by About.jsx until FEAT-002 rewrites
-// it to use skillCategories. Keeps the production build green (Vite 8 treats a
-// missing named export as a hard error).
-export const skills = skillCategories.flatMap((group) => group.items)
-
 export const projects = [
   {
     title: 'Hotel Arca',

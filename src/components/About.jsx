@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
-import { personalInfo, skills } from '../data/portfolio'
+import { personalInfo, skillCategories } from '../data/portfolio'
+import ImageWithFallback from './ImageWithFallback'
 import '../styles/about.css'
 
 function About() {
@@ -13,20 +14,19 @@ function About() {
         <div className="about-grid">
           <div className="about-image-wrap reveal">
             <div className="about-image-frame">
-              {personalInfo.profileImage ? (
-                <img 
-                  src={personalInfo.profileImage} 
-                  alt={personalInfo.name} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              ) : (
-                <div className="about-placeholder">
-                  <div className="about-placeholder-icon">👤</div>
-                  <div className="about-placeholder-label">Foto Profil</div>
-                </div>
-              )}
+              <ImageWithFallback
+                src={personalInfo.profileImage}
+                alt={personalInfo.name}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                fallback={
+                  <div className="about-placeholder">
+                    <div className="about-placeholder-icon">👤</div>
+                    <div className="about-placeholder-label">Foto Profil</div>
+                  </div>
+                }
+              />
             </div>
-            <div className="about-corner-tag">Back-End Dev</div>
+            <div className="about-corner-tag">Full-Stack Dev</div>
           </div>
 
           {/* Text side */}
@@ -44,10 +44,17 @@ function About() {
                 />
               ))}
             </div>
-            <div className="skills-grid reveal reveal-delay-3">
-              {skills.map((skill) => (
-                <div key={skill} className="skill-item">
-                  {skill}
+            <div className="reveal reveal-delay-3">
+              {skillCategories.map((group) => (
+                <div key={group.category} className="skill-category">
+                  <div className="skill-category-label">{group.category}</div>
+                  <div className="skills-grid">
+                    {group.items.map((skill) => (
+                      <div key={skill} className="skill-item">
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

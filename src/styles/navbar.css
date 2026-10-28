@@ -69,7 +69,17 @@ nav {
   nav {
     padding: 0 1rem;
   }
-  .nav-links a:not(.theme-wrap):nth-child(-n + 3) {
+  .nav-links {
+    gap: 0.85rem;
+  }
+  /* Keep the most useful anchors reachable alongside the theme toggle on
+     small screens; hide the less critical mid links so the bar stays tidy. */
+  .nav-links a:not(.theme-wrap):nth-child(3),
+  .nav-links a:not(.theme-wrap):nth-child(5) {
     display: none;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.05em;
   }
 }

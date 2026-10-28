@@ -31,9 +31,9 @@ function Contact() {
                 marginBottom: '2rem',
               }}
             >
-              Terbuka untuk peluang kolaborasi, freelance, magang, maupun posisi
-              full-time di bidang Back-End Development dan Software Engineering.
-              Jangan ragu untuk menghubungi saya.
+              I'm open to internship opportunities and collaboration on
+              full-stack projects. Feel free to reach out — I'd love to connect
+              and build something together.
             </p>
             <div className="contact-links">
               {contactLinks.map((link, index) => (

@@ -1,11 +1,22 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { projects } from '../data/portfolio'
+import ImageWithFallback from './ImageWithFallback'
+import Modal from './Modal'
+import ProjectDetail from './ProjectDetail'
 import '../styles/projects.css'
 
 function Projects() {
   const sectionRef = useRef(null)
+  const [selected, setSelected] = useState(null)
   useScrollRevealAll(sectionRef)
+
+  const handleKeyDown = (e, project) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      setSelected(project)
+    }
+  }
 
   return (
     <section id="projects" ref={sectionRef}>
@@ -17,26 +28,28 @@ function Projects() {
 
         <div className="projects-table">
           {projects.map((project, index) => (
-            <a
+            <div
               key={project.title}
-              href={project.link}
+              role="button"
+              tabIndex={0}
               className={`project-row reveal${index > 0 ? ` reveal-delay-${index}` : ''}`}
+              onClick={() => setSelected(project)}
+              onKeyDown={(e) => handleKeyDown(e, project)}
             >
               <div className="project-thumbnail">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                ) : (
-                  <div
-                    className="project-thumb-inner"
-                    style={{ background: project.gradient }}
-                  >
-                    {project.icon}
-                  </div>
-                )}
+                <ImageWithFallback
+                  src={project.image}
+                  alt={project.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  fallback={
+                    <div
+                      className="project-thumb-inner"
+                      style={{ background: project.gradient }}
+                    >
+                      {project.icon}
+                    </div>
+                  }
+                />
               </div>
               <div>
                 <div className="project-title">{project.title}</div>
@@ -48,13 +61,21 @@ function Projects() {
                     <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
-                <div className="project-year">{project.year}</div>
+                {project.year && <div className="project-year">{project.year}</div>}
               </div>
               <span className="project-arrow">↗</span>
-            </a>
+            </div>
           ))}
         </div>
       </div>
+
+      <Modal
+        isOpen={!!selected}
+        onClose={() => setSelected(null)}
+        labelledById="project-detail-title"
+      >
+        {selected && <ProjectDetail project={selected} />}
+      </Modal>
     </section>
   )
 }
