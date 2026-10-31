@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { personalInfo, skillCategories } from '../data/portfolio'
 import ImageWithFallback from './ImageWithFallback'
-import { LeafSprig, CornerFlourish } from './decor'
+import { LeafSprig, CornerFlourish, OakTree } from './decor'
 import '../styles/about.css'
 
 function About() {
@@ -11,6 +11,9 @@ function About() {
 
   return (
     <section id="about" ref={sectionRef}>
+      <div className="decor decor-oak decor-oak-section about-oak">
+        <OakTree />
+      </div>
       <div className="container">
         <div className="about-grid">
           <div className="about-image-wrap reveal">

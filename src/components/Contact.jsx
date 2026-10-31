@@ -2,6 +2,7 @@ import { useRef, useState, useCallback } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { personalInfo, contactLinks } from '../data/portfolio'
 import { BranchDecor } from './decor'
+import ContactIcon from './ContactIcon'
 import '../styles/contact.css'
 
 function Contact() {
@@ -47,7 +48,16 @@ function Contact() {
                   className={`contact-link reveal reveal-delay-${Math.min(index + 2, 4)}`}
                   {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
-                  <div className="contact-link-icon">{link.icon}</div>
+                  <div className="contact-link-icon">
+                    {link.iconName ? (
+                      <ContactIcon
+                        name={link.iconName}
+                        className="contact-link-svg"
+                      />
+                    ) : (
+                      link.icon
+                    )}
+                  </div>
                   <div>
                     <div className="contact-link-label">{link.label}</div>
                     <div className="contact-link-value">{link.value}</div>

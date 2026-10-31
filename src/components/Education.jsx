@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { education } from '../data/portfolio'
-import { Divider } from './decor'
+import { Divider, OakTree } from './decor'
 import '../styles/education.css'
 
 function Education() {
@@ -10,6 +10,9 @@ function Education() {
 
   return (
     <section id="education" ref={sectionRef}>
+      <div className="decor decor-oak decor-oak-section decor-flip education-oak">
+        <OakTree />
+      </div>
       <div className="container">
         <div className="section-label reveal">Learning &amp; Milestones</div>
         <h2 className="section-title reveal reveal-delay-1">

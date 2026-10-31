@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useScrollRevealAll } from '../hooks/useScrollReveal'
 import { volunteer } from '../data/portfolio'
-import { LeafSprig } from './decor'
+import { LeafSprig, OakTree } from './decor'
 import '../styles/volunteer.css'
 
 function Volunteer() {
@@ -10,6 +10,9 @@ function Volunteer() {
 
   return (
     <section id="volunteer" ref={sectionRef}>
+      <div className="decor decor-oak decor-oak-section volunteer-oak">
+        <OakTree />
+      </div>
       <div className="container">
         <div className="volunteer-head">
           <div className="decor decor-sprig volunteer-sprig">

@@ -146,3 +146,11 @@
     aspect-ratio: 4/3;
   }
 }
+
+/* Oak backdrop for the About section — bottom-right, quiet. */
+.about-oak {
+  bottom: -4%;
+  right: -4%;
+  width: clamp(260px, 32vw, 460px);
+  height: clamp(380px, 46vw, 640px);
+}

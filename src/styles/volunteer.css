@@ -85,3 +85,11 @@
   font-size: 11px;
   top: 0.35em;
 }
+
+/* Oak backdrop for Volunteer — bottom-left, very quiet. */
+.volunteer-oak {
+  bottom: -5%;
+  left: -3%;
+  width: clamp(240px, 28vw, 420px);
+  height: clamp(340px, 42vw, 600px);
+}

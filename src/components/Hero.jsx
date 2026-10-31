@@ -1,6 +1,6 @@
 import { useTypingEffect } from '../hooks/useTypingEffect'
 import { personalInfo, typingPhrases } from '../data/portfolio'
-import { BranchDecor } from './decor'
+import { BranchDecor, OakTree } from './decor'
 import '../styles/hero.css'
 
 function Hero() {
@@ -10,6 +10,9 @@ function Hero() {
     <section id="hero" className="paper-grain">
       <div className="hero-bg"></div>
       <div className="hero-grid"></div>
+      <div className="decor decor-oak hero-oak">
+        <OakTree />
+      </div>
       <div className="decor decor-branch hero-branch">
         <BranchDecor />
       </div>
@@ -17,12 +20,12 @@ function Hero() {
         <div className="hero-badge">Open to Opportunities</div>
         <div className="hero-role">{personalInfo.heroSubtitle}</div>
         <h1 className="hero-title">
-          Where Art Meets<br />
-          <span className="name-italic">Technology.</span>
+          Building Reliable Software with<br />
+          <span className="name-italic">Full-Stack Development.</span>
         </h1>
         <p className="hero-supporting">
-          Building thoughtful digital experiences through Full-Stack
-          Development.
+          Designing and developing modern web applications, backend systems,
+          and database-driven solutions.
         </p>
         <div className="hero-typing">
           <span id="typingText">{typedText}</span>
@@ -34,7 +37,7 @@ function Hero() {
           <a href="#contact" className="btn-outline">Get in Touch</a>
         </div>
         <div className="hero-caption">
-          A portfolio of code, ideas, and exploration.
+          A portfolio of projects, skills, and continuous learning.
         </div>
       </div>
       <div className="hero-scroll">

@@ -54,6 +54,11 @@
   justify-content: center;
   font-size: 18px;
   flex-shrink: 0;
+  color: var(--forest);
+}
+.contact-link-svg {
+  width: 20px;
+  height: 20px;
 }
 .contact-link-label {
   font-size: 11px;

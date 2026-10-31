@@ -77,3 +77,11 @@
     gap: 1.2rem;
   }
 }
+
+/* Oak backdrop for Education — bottom-right, mirrored, very quiet. */
+.education-oak {
+  bottom: -5%;
+  right: -3%;
+  width: clamp(240px, 28vw, 420px);
+  height: clamp(340px, 42vw, 600px);
+}
