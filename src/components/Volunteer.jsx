@@ -30,11 +30,13 @@ function Volunteer() {
               key={item.role}
               className={`volunteer-card reveal reveal-delay-${Math.min(index + 2, 4)}`}
             >
-              {item.category && (
-                <div className="volunteer-category">{item.category}</div>
-              )}
-              <div className="volunteer-role">{item.role}</div>
-              <div className="volunteer-org">{item.organization}</div>
+              <div className="volunteer-card-head">
+                {item.category && (
+                  <div className="volunteer-category">{item.category}</div>
+                )}
+                <div className="volunteer-role">{item.role}</div>
+                <div className="volunteer-org">{item.organization}</div>
+              </div>
               <ul className="volunteer-list">
                 {item.responsibilities.map((resp, i) => (
                   <li key={i}>{resp}</li>

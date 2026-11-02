@@ -7,11 +7,20 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch; /* both cards share the tallest card's height */
 }
 @media (max-width: 760px) {
   .volunteer-grid {
     grid-template-columns: 1fr;
+  }
+  /* On small screens let the title wrap again so it never overflows the card;
+     equal-height alignment isn't needed when the cards stack vertically. */
+  .volunteer-role {
+    white-space: normal;
+    font-size: 1.3rem;
+  }
+  .volunteer-card-head {
+    min-height: 0;
   }
 }
 .volunteer-card {
@@ -22,6 +31,18 @@
   transition: all 0.35s;
   position: relative;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* Fixed-height header block so the divider line and the first bullet start at
+   the same vertical position in every card, regardless of title wrapping. */
+.volunteer-card-head {
+  min-height: 4.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
 }
 .volunteer-category {
   font-family: var(--font-mono);
@@ -70,6 +91,7 @@
   color: var(--text);
   line-height: 1.3;
   margin-bottom: 0.4rem;
+  white-space: nowrap; /* keep each title on one line so card headers match */
 }
 .volunteer-org {
   font-family: var(--font-mono);
@@ -77,13 +99,13 @@
   letter-spacing: 0.08em;
   color: var(--text3);
   text-transform: uppercase;
-  margin-bottom: 2rem;
 }
 .volunteer-list {
   list-style: none;
   margin: 0;
   padding: 1.75rem 0 0;
   border-top: 1px solid var(--border);
+  flex: 1; /* fill remaining height so equal-height cards look balanced */
 }
 .volunteer-list li {
   position: relative;
