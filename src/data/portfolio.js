@@ -224,12 +224,25 @@ export const education = {
   specialization: 'Full-Stack Development',
 }
 
-export const volunteer = {
-  role: 'Volunteer — Teach For Indonesia (TFI)',
-  organization: 'Paguyuban Orangtua Disabilitas',
-  responsibilities: [
-    'Supported educational activities for children with disabilities.',
-    'Helped create a welcoming and inclusive learning environment.',
-    'Participated in educational activities, engagement, and learning support.',
-  ],
-}
+export const volunteer = [
+  {
+    role: 'Volunteer — Teach For Indonesia (TFI)',
+    organization: 'Paguyuban Orangtua Disabilitas',
+    category: 'Education & community service',
+    responsibilities: [
+      'Supported educational activities for children with disabilities.',
+      'Helped create a welcoming and inclusive learning environment.',
+      'Participated in educational activities, engagement, and learning support.',
+    ],
+  },
+  {
+    role: 'Volunteer — Social Service (Bakti Sosial)',
+    organization: 'Sumber Gentong Nature Tourism, Malang',
+    category: 'Environmental & community service',
+    responsibilities: [
+      'Participated in a community service program at the Sumber Gentong nature tourism site in Malang.',
+      'Helped repair and improve the local prayer room (musala) for the community and visitors.',
+      'Took part in a mangrove planting activity to support environmental conservation.',
+    ],
+  },
+]

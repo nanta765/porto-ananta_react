@@ -2,15 +2,34 @@
 #volunteer {
   background: var(--bg);
 }
+.volunteer-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .volunteer-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .volunteer-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 2.5rem;
-  margin-top: 3rem;
   transition: all 0.35s;
   position: relative;
   overflow: hidden;
+}
+.volunteer-category {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 0.75rem;
 }
 .volunteer-head {
   position: relative;

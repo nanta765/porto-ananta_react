@@ -24,14 +24,24 @@ function Volunteer() {
           </h2>
         </div>
 
-        <div className="volunteer-card reveal reveal-delay-2">
-          <div className="volunteer-role">{volunteer.role}</div>
-          <div className="volunteer-org">{volunteer.organization}</div>
-          <ul className="volunteer-list">
-            {volunteer.responsibilities.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+        <div className="volunteer-grid">
+          {volunteer.map((item, index) => (
+            <div
+              key={item.role}
+              className={`volunteer-card reveal reveal-delay-${Math.min(index + 2, 4)}`}
+            >
+              {item.category && (
+                <div className="volunteer-category">{item.category}</div>
+              )}
+              <div className="volunteer-role">{item.role}</div>
+              <div className="volunteer-org">{item.organization}</div>
+              <ul className="volunteer-list">
+                {item.responsibilities.map((resp, i) => (
+                  <li key={i}>{resp}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
