@@ -44,8 +44,10 @@
 }
 .achievement-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 16 / 11;
+  object-fit: contain;
+  background: var(--bg2);
   border-radius: 4px;
   margin-bottom: 1.2rem;
   /* Framed-certificate treatment: thin beige frame + cream mat. */
@@ -121,8 +123,9 @@
 .achievement-lightbox-image {
   display: block;
   width: 100%;
-  max-height: 70vh;
+  max-height: 75vh;
   object-fit: contain;
+  background: var(--bg2);
   border-radius: 6px;
   border: 1px solid var(--border);
 }
@@ -145,5 +148,18 @@
 @media (max-width: 900px) {
   .achievements-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .achievement-card {
+    padding: 1.25rem;
+  }
+  .achievement-title {
+    font-size: 1.15rem;
+  }
+  .achievement-lightbox-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.9rem;
   }
 }

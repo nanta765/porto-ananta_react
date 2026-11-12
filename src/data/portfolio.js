@@ -5,7 +5,7 @@
 export const personalInfo = {
   name: 'I Gusti Bagus Ananta',
   fullName: 'I Gusti Bagus Ananta Tusan Semadi',
-  role: 'Computer Science Student | Aspiring Full-Stack Developer',
+  role: 'Computer Science Student (Full-Stack Specialization) | Aspiring Full-Stack Developer',
   university: 'BINUS University Malang',
   major: 'Computer Science',
   semester: 5,
@@ -16,20 +16,20 @@ export const personalInfo = {
   heroHeadline: 'Building Digital Solutions Through Full-Stack Development.',
   heroSubtitle: 'Computer Science · BINUS University',
   heroSupporting:
-    'I am a Computer Science student specializing in Full-Stack Development, focused on building modern web applications, backend systems, and database-driven solutions.',
+    'Computer Science student at BINUS University Malang specializing in full-stack web development and applied AI. Experienced in building responsive interfaces, backend APIs, relational databases, and machine-learning workflows.',
   aboutBio: [
-    "I'm a <strong>Computer Science student at BINUS University Malang</strong> specializing in <strong>Full-Stack Development</strong>. I enjoy building responsive web applications, backend systems, database-driven solutions, and exploring AI integration to solve real problems.",
-    'Through academic and team projects I have worked across the stack with <strong>React.js, JavaScript, Node.js, PHP, Laravel, Python, MariaDB, and PostgreSQL</strong> — connecting clean front-end experiences with reliable server-side logic and well-structured data.',
-    'I care about building <strong>practical, user-friendly, and maintainable software</strong>, and I value continuous improvement — constantly learning new tools and techniques to grow as a developer.',
+    "I'm a <strong>Computer Science student at BINUS University Malang</strong> (Semester 5, expected graduation 2028) specializing in <strong>Full-Stack Development</strong> and <strong>applied AI</strong>.",
+    'Experienced in developing responsive web interfaces, backend services, and relational databases (<strong>MariaDB & PostgreSQL</strong>), alongside dataset preprocessing for machine learning. My core stack includes <strong>JavaScript, Python, PHP, React.js, Node.js, and Laravel</strong>.',
+    'I focus on building <strong>clean, functional, and maintainable software</strong> that solves practical real-world problems through disciplined engineering.',
   ],
 }
 
 export const typingPhrases = [
   'Building modern web applications.',
   'Frontend + Backend + Databases.',
-  'React, Laravel, Node.js.',
-  'Exploring AI integration.',
-  'Problem solver at heart.',
+  'React.js, Laravel, Node.js, Python.',
+  'Exploring practical AI & Machine Learning.',
+  'Full-Stack & Applied AI Solutions.',
 ]
 
 export const navLinks = [
@@ -64,28 +64,38 @@ export const skillCategories = [
     category: 'AI & Data Engineering',
     items: [
       'Python',
-      'Dataset preprocessing',
+      'Dataset Preprocessing',
       'Introductory Machine Learning',
       'Human Pose Estimation',
+      'Random Forest',
+    ],
+  },
+  {
+    category: 'Development Tools & AI IDEs',
+    items: [
+      'Google Antigravity',
+      'Kiro',
+      'Git & GitHub',
     ],
   },
 ]
 
 export const projects = [
   {
-    title: 'Hotel Arca',
+    title: 'Hotel Arca Promotional & Booking Website',
     role: 'Front-End Developer',
-    category: 'Full-Stack Web Application',
-    projectType: 'Academic / Team Project',
+    category: 'Promotional & Room-Booking Website',
+    projectType: 'Course project: Software Engineering',
     tags: ['React.js', 'JavaScript', 'CSS', 'Node.js'],
-    desc: 'A full-stack hotel booking web application where users can browse rooms, view details, and make reservations through a clean and responsive interface. Built as a team project with a focus on an intuitive front-end experience connected to backend services.',
+    desc: 'Built a responsive promotional and room-booking website for Hotel Arca (Lombok) with React.js, JavaScript, and CSS, connected to a Node.js backend to replace manual reservations with an online flow.',
+    explanation:
+      'Developed as a Software Engineering course project to replace Hotel Arca’s manual booking workflow with a centralized online reservation system. Built with a React.js front end and Node.js backend, the application translates client requirements into reusable components with consistent multi-device layouts, structured date-selection, and automated booking submissions.',
     keyContributions: [
-      'Developed responsive front-end interfaces using React.js and modern CSS.',
-      'Built reusable UI components for room listings, booking forms, and detail views.',
-      'Integrated the front-end with backend services for booking and room data.',
-      'Collaborated within a team to align the UI with the application flow.',
-      'Focused on usability, responsiveness, and a consistent visual design.',
+      'Built a responsive room reservation interface using React.js and CSS, replacing manual paper records with an online booking flow [isi angka: contoh reduksi waktu pemesanan X%].',
+      'Designed interactive booking forms and site navigation, enabling guests to select dates, inspect room details, and submit reservations directly.',
+      'Developed reusable React components within a team of 3, ensuring consistent layout across devices and contributing to Node.js backend endpoints.',
     ],
+    toolsNote: 'Google Antigravity & Kiro used for code writing, component scaffolding, and debugging.',
     year: '2025',
     icon: '🏨',
     image: '/hotel_arca_1.jpg',
@@ -100,20 +110,24 @@ export const projects = [
     title: 'Real-Time Gym Motion Correction AI',
     role: 'Full-Stack & Dataset Engineer',
     category: 'AI-Integrated Web Application',
-    projectType: 'Academic / Team Project',
+    projectType: 'Course project: Artificial Intelligence / Machine Learning',
     tags: [
       'Python',
-      'Web Development',
-      'Dataset Preprocessing',
+      'Random Forest',
       'Human Pose Estimation',
+      'Dataset Preprocessing',
+      'Web Development',
     ],
-    desc: 'An AI-integrated web application that analyzes exercise movements in real time using human pose estimation and gives corrective feedback to help users exercise with safer, more accurate form.',
+    desc: 'Built a real-time exercise posture correction application in Python using human pose estimation and a Random Forest model for biceps curls, back exercises, and push-ups.',
+    explanation:
+      'Built as an Artificial Intelligence & Machine Learning course project to help users perform exercises safely with real-time posture feedback for biceps curls, back exercises, and push-ups. The system captures camera video streams, performs human pose estimation to extract joint coordinates, and uses a Random Forest classifier (combining predictions from multiple decision trees) to evaluate movement conditions and deliver immediate corrective guidance.',
     keyContributions: [
-      'Prepared and preprocessed datasets used for human pose estimation.',
-      'Worked on integrating the AI model into a web-based application.',
-      'Contributed across the stack to connect model output with the user interface.',
-      'Focused on delivering real-time, understandable feedback to users.',
+      'Built a camera-enabled Python web interface that reads live camera feeds to deliver immediate visual posture correction and repetition feedback.',
+      'Collected and preprocessed 1,800+ custom video and image samples (extracting over 30,000 landmark frames) to train the human pose estimation pipeline.',
+      'Trained a Random Forest model on extracted landmark coordinates, classifying correct versus incorrect exercise form with [isi angka: contoh akurasi 89%].',
+      'Integrated the model into a Python web interface to deliver sub-second posture feedback during live workout execution [isi angka: contoh latensi <150ms].',
     ],
+    toolsNote: 'Google Antigravity & Kiro used for code generation, pipeline integration, and debugging.',
     icon: '🤖',
     image: '/ai1.jpeg',
     images: ['/ai1.jpeg', '/ai-2.jpg', '/ai-3.jpg'],
@@ -121,19 +135,21 @@ export const projects = [
     github: 'https://github.com/nanta765',
   },
   {
-    title: 'Kost Arcadia Room — Sistem Pemesanan Kost',
-    role: 'Front-End Engineer',
+    title: 'Arcadia Boarding House (Kos) Booking System',
+    role: 'Front-End Developer',
     category: 'Database-Driven Web Application',
-    projectType: 'Academic / Team Project',
+    projectType: 'Course project: Database Systems / Web Development',
     tags: ['Laravel', 'PHP', 'CSS Frameworks', 'MariaDB', 'PostgreSQL'],
-    desc: 'A database-driven boarding-house (kost) booking system where users can browse available rooms, check room details and pricing, and submit booking requests. Backed by a relational database and a Laravel/PHP application layer, it digitizes the manual kost booking and data-submission process.',
+    desc: 'Built a database-driven boarding-house booking platform with Laravel (PHP), MariaDB, and PostgreSQL to streamline room availability checks, pricing inquiries, and tenant reservations.',
+    explanation:
+      'Developed for Database Systems & Web Development within a team of 3 to digitize boarding-house (kost) room management and tenant bookings. The platform pairs Laravel (PHP) Blade views with MariaDB and PostgreSQL relational databases, streamlining room availability checks, pricing calculations, and client-side data submission.',
     keyContributions: [
-      'Developed front-end interfaces for browsing kost rooms and submitting bookings.',
-      'Built dynamic views and forms for room details, pricing, and tenant data.',
-      'Worked with Laravel and PHP to connect views with application logic.',
-      'Collaborated on relational database design using MariaDB and PostgreSQL.',
-      'Focused on a clear, responsive layout for the booking experience.',
+      'Developed dynamic front-end views and booking forms using Laravel Blade in a team of 3, enabling prospective tenants to filter room vacancies and pricing in real time.',
+      'Built dynamic views and data-entry forms connected to MariaDB and PostgreSQL relational databases, enforcing structured schema validation to prevent invalid entries.',
+      'Contributed to Laravel backend development and optimized the data submission flow between the front end and the database [isi angka: contoh eliminasi galat input X%].',
+      'Structured responsive layout grids across all booking views, maintaining full usability across mobile and desktop devices.',
     ],
+    toolsNote: 'Google Antigravity & Kiro used for code generation and query debugging.',
     icon: '🏠',
     image: '/arcakost-1.jpg',
     images: ['/arcakost-1.jpg', '/arcakost-2.jpg', '/arcakost-3.jpg'],
@@ -148,12 +164,14 @@ export const achievements = [
     title: 'First Place — Business Idea Competition (PARENThink)',
     issuer: 'BINUS University Malang Campus',
     date: '27 May 2025',
+    note: 'Certificate of Achievement recognizing creativity and entrepreneurial spirit.',
     image: '/idebisnis.jpg',
   },
   {
     icon: '📜',
     title: 'DSF 46 Faculty of IT: Back End',
     date: '15–19 December 2025',
+    note: 'Back End program certificate.',
     image: '/dibimbing-backend.jpg',
   },
   {
@@ -161,13 +179,14 @@ export const achievements = [
     title: 'Back-End Development Class 2024/2025 — BNCC',
     issuer: 'BINUS University',
     date: 'August 2025',
-    note: 'Certificate of Completion — Credit achievement.',
+    note: 'Certificate of Completion with achievement of Credit.',
     image: '/backend.png',
   },
   {
     icon: '📜',
     title: 'C for Beginners — Great Learning Academy',
     date: 'September 2024',
+    note: 'Certificate of Completion for online programming course.',
     image: '/c-beginners.jpg',
   },
 ]
@@ -175,7 +194,7 @@ export const achievements = [
 export const stats = [
   { target: 3, label: 'Projects' },
   { target: 4, label: 'Certifications' },
-  { target: 17, label: 'Technologies' },
+  { target: 20, label: 'Technologies' },
   { target: 100, label: '% Committed' },
 ]
 
@@ -228,21 +247,20 @@ export const volunteer = [
   {
     role: 'Volunteer — Teach For Indonesia (TFI)',
     organization: 'Paguyuban Orangtua Disabilitas',
-    category: 'Education & community service',
+    category: 'Community education support',
     responsibilities: [
-      'Supported educational activities for children with disabilities.',
-      'Helped create a welcoming and inclusive learning environment.',
-      'Participated in educational activities, engagement, and learning support.',
+      'Facilitated learning activities for children with disabilities in partnership with Paguyuban Orangtua Disabilitas.',
+      'Guided group activities and provided one-on-one support so every child could participate in each session.',
     ],
   },
   {
     role: 'Volunteer — Social Service (Bakti Sosial)',
     organization: 'Sumber Gentong Nature Tourism, Malang',
-    category: 'Environmental & community service',
+    category: 'Environmental and community service',
     responsibilities: [
-      'Participated in a community service program at the Sumber Gentong nature tourism site in Malang.',
-      'Helped repair and improve the local prayer room (musala) for the community and visitors.',
-      'Took part in a mangrove planting activity to support environmental conservation.',
+      'Carried out a community service program at the Sumber Gentong nature tourism site in Malang.',
+      'Repaired and improved the local prayer room (musala) for the community and visitors.',
+      'Planted mangroves for environmental conservation.',
     ],
   },
 ]

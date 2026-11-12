@@ -43,7 +43,7 @@ function Projects() {
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
                   fallback={
                     <div
                       className="project-thumb-inner"

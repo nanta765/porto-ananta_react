@@ -49,6 +49,13 @@ function ProjectDetail({ project }) {
         ))}
       </div>
 
+      {project.explanation && (
+        <div className="project-detail-explanation">
+          <div className="project-detail-subhead">Project Overview</div>
+          <p>{project.explanation}</p>
+        </div>
+      )}
+
       {project.keyContributions && project.keyContributions.length > 0 && (
         <>
           <div className="project-detail-subhead">Key Contributions</div>
@@ -58,6 +65,12 @@ function ProjectDetail({ project }) {
             ))}
           </ul>
         </>
+      )}
+
+      {project.toolsNote && (
+        <div className="project-detail-tools-note">
+          <span className="project-detail-tools-label">AI &amp; Dev Tools:</span> {project.toolsNote}
+        </div>
       )}
 
       <a

@@ -24,7 +24,7 @@ function About() {
               <ImageWithFallback
                 src={personalInfo.profileImage}
                 alt={personalInfo.name}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
                 fallback={
                   <div className="about-placeholder">
                     <div className="about-placeholder-icon">👤</div>
