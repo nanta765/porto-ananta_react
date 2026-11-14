@@ -18,9 +18,9 @@ function Volunteer() {
           <div className="decor decor-sprig volunteer-sprig">
             <LeafSprig />
           </div>
-          <div className="section-label reveal">Beyond the Screen</div>
+          <div className="section-label reveal">Volunteer Experience</div>
           <h2 className="section-title reveal reveal-delay-1">
-            Beyond the <span className="it">Screen.</span>
+            Volunteer <span className="it">Experience.</span>
           </h2>
         </div>
 
