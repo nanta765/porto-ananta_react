@@ -168,6 +168,16 @@
   flex-wrap: wrap;
   animation: fadeUp 0.8s 0.58s ease both;
 }
+/* Stack tombol CV ke baris kedua di mobile agar tidak terlalu sempit */
+@media (max-width: 540px) {
+  .hero-ctas {
+    gap: 0.75rem;
+  }
+  .hero-ctas .btn-cv {
+    padding: 11px 20px;
+    font-size: 13px;
+  }
+}
 .hero-caption {
   font-family: var(--font-mono);
   font-size: 11px;

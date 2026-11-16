@@ -13,6 +13,7 @@ export const personalInfo = {
   location: 'Indonesia',
   navLogo: 'IGBA',
   profileImage: '/anantaaa.jpg',
+  cvUrl: '/CV_I_Gusti_Bagus_Ananta.pdf',  // Ganti dengan URL Google Drive atau path PDF kamu
   heroHeadline: 'Building Digital Solutions Through Full-Stack Development.',
   heroSubtitle: 'Computer Science · BINUS University',
   heroSupporting:
