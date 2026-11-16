@@ -176,31 +176,47 @@ section {
 }
 
 /* ════════════════ BUTTONS ════════════════ */
+/* Semua tombol pakai teknik sweep yang sama:
+   ::after sweep z-index:-1, isolation:isolate, cubic-bezier 0.42s */
 
-/* ─── Shared sweep mixin — semua tombol non-primary pakai pola ini ─── */
-/* Teknik: lapisan sweep di ::after dengan z-index: -1 agar teks SELALU di atas */
-
+/* ─── btn-primary: sudah hijau, sweep ke shade lebih gelap ─── */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
   padding: 14px 28px;
   border-radius: 100px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.05em;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.38s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease, box-shadow 0.3s ease;
-  letter-spacing: 0.05em;
+  color: var(--bg);
+  background: var(--accent);
+  border: 1.5px solid transparent;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Lapisan sweep gelap — masuk dari kiri saat hover */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent2);
+  border-radius: inherit;
+  transform: translateX(-102%);
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 .btn-primary:hover {
-  background: var(--accent2);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(53, 72, 58, 0.18);
+  box-shadow: 0 6px 24px rgba(53, 72, 58, 0.22);
+}
+.btn-primary:hover::after {
+  transform: translateX(0);
 }
 
 /* ─── btn-outline ─── */
