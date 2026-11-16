@@ -190,7 +190,7 @@ section {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   letter-spacing: 0.05em;
 }
 .btn-primary:hover {
@@ -198,6 +198,8 @@ section {
   transform: translateY(-2px);
   box-shadow: var(--card-shadow);
 }
+
+/* ─── btn-outline: sweep fill hijau dari kiri ke kanan ─── */
 .btn-outline {
   display: inline-flex;
   align-items: center;
@@ -212,15 +214,40 @@ section {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s;
   letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  /* Transisi warna teks & border terpisah agar sweep bisa jalan */
+  transition: color 0.38s ease, border-color 0.38s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Lapisan sweep — masuk dari kiri, keluar ke kanan */
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  border-radius: inherit;
+  transform: translateX(-101%);
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
 }
 .btn-outline:hover {
+  color: var(--bg);
   border-color: var(--accent);
-  color: var(--accent);
   transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(53, 72, 58, 0.18);
 }
-/* CV Download Button — earthy parchment tone, distinct from primary/outline */
+.btn-outline:hover::before {
+  transform: translateX(0);
+}
+/* Pastikan teks & ikon selalu di atas lapisan sweep */
+.btn-outline > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── btn-cv: sweep fill hijau dari kiri ke kanan (sama dengan outline) ─── */
+/* CV Download Button */
 .btn-cv {
   display: inline-flex;
   align-items: center;
@@ -235,37 +262,37 @@ section {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s;
   letter-spacing: 0.05em;
   position: relative;
   overflow: hidden;
+  transition: color 0.38s ease, border-color 0.38s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-cv::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--accent-light);
-  opacity: 0;
-  transition: opacity 0.3s;
+  background: var(--accent);
   border-radius: inherit;
+  transform: translateX(-101%);
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
 }
 .btn-cv:hover {
+  color: var(--bg);
   border-color: var(--accent);
-  color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(53, 72, 58, 0.14);
+  box-shadow: 0 6px 24px rgba(53, 72, 58, 0.18);
 }
 .btn-cv:hover::before {
-  opacity: 1;
+  transform: translateX(0);
+}
+/* Ikon download bergerak turun sedikit saat hover */
+.btn-cv > * {
+  position: relative;
+  z-index: 1;
 }
 .btn-cv svg {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s;
-}
-.btn-cv span, .btn-cv > * {
-  position: relative;
-  z-index: 1;
+  transition: transform 0.3s ease;
 }
 .btn-cv:hover svg {
   transform: translateY(2px);
