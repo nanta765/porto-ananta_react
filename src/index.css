@@ -176,6 +176,10 @@ section {
 }
 
 /* ════════════════ BUTTONS ════════════════ */
+
+/* ─── Shared sweep mixin — semua tombol non-primary pakai pola ini ─── */
+/* Teknik: lapisan sweep di ::after dengan z-index: -1 agar teks SELALU di atas */
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -190,46 +194,51 @@ section {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.38s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease, box-shadow 0.3s ease;
   letter-spacing: 0.05em;
 }
 .btn-primary:hover {
   background: var(--accent2);
   transform: translateY(-2px);
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 6px 24px rgba(53, 72, 58, 0.18);
 }
 
-/* ─── btn-outline: sweep fill hijau dari kiri ke kanan ─── */
+/* ─── btn-outline ─── */
 .btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  color: var(--text2);
-  border: 1px solid var(--border2);
   padding: 14px 28px;
   border-radius: 100px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.05em;
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: 0.05em;
+  /* warna & border default */
+  color: var(--text2);
+  background: transparent;
+  border: 1.5px solid var(--border2);
+  /* isolate supaya z-index ::after tidak bocor keluar */
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  /* Transisi warna teks & border terpisah agar sweep bisa jalan */
-  transition: color 0.38s ease, border-color 0.38s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: color 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
 }
-/* Lapisan sweep — masuk dari kiri, keluar ke kanan */
-.btn-outline::before {
+/* Lapisan sweep — z-index negatif, teks selalu di atas */
+.btn-outline::after {
   content: '';
   position: absolute;
   inset: 0;
   background: var(--accent);
   border-radius: inherit;
-  transform: translateX(-101%);
+  transform: translateX(-102%);
   transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 0;
+  z-index: -1;
 }
 .btn-outline:hover {
   color: var(--bg);
@@ -237,45 +246,43 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(53, 72, 58, 0.18);
 }
-.btn-outline:hover::before {
+.btn-outline:hover::after {
   transform: translateX(0);
 }
-/* Pastikan teks & ikon selalu di atas lapisan sweep */
-.btn-outline > * {
-  position: relative;
-  z-index: 1;
-}
 
-/* ─── btn-cv: sweep fill hijau dari kiri ke kanan (sama dengan outline) ─── */
-/* CV Download Button */
+/* ─── btn-cv ─── */
 .btn-cv {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  color: var(--text2);
-  border: 1px solid var(--border2);
   padding: 14px 28px;
   border-radius: 100px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.05em;
   text-decoration: none;
   cursor: pointer;
-  letter-spacing: 0.05em;
+  color: var(--text2);
+  background: transparent;
+  border: 1.5px solid var(--border2);
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  transition: color 0.38s ease, border-color 0.38s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: color 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
 }
-.btn-cv::before {
+.btn-cv::after {
   content: '';
   position: absolute;
   inset: 0;
   background: var(--accent);
   border-radius: inherit;
-  transform: translateX(-101%);
+  transform: translateX(-102%);
   transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 0;
+  z-index: -1;
 }
 .btn-cv:hover {
   color: var(--bg);
@@ -283,14 +290,10 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(53, 72, 58, 0.18);
 }
-.btn-cv:hover::before {
+.btn-cv:hover::after {
   transform: translateX(0);
 }
 /* Ikon download bergerak turun sedikit saat hover */
-.btn-cv > * {
-  position: relative;
-  z-index: 1;
-}
 .btn-cv svg {
   transition: transform 0.3s ease;
 }
